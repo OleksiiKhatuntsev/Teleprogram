@@ -19,8 +19,15 @@ namespace Teleprogram
 
         public void CreateFile()
         {
+            if(File.Exists(@"C:\Temp\TeleprogramsDb.txt"))
+            { return;}
             var stream = File.Create(@"C:\Temp\TeleprogramsDb.txt");
             stream.Close();
+        }
+
+        public static void DeleteFile()
+        {
+            File.Delete(@"C:\Temp\TeleprogramsDb.txt");
         }
     }
 }

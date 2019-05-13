@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Text;
 
@@ -42,19 +43,41 @@ namespace Teleprogram
                 {
                     teleprogram.Date += text;
                 }
+                else if(counter == 3)
+                {
+                    if (text == 'T')
+                        teleprogram.isSaved = true;
+                    if (text == 'F')
+                        teleprogram.isSaved = false;
+                }
             }
 
             return teleprograms;
+        }
+
+        public static void SaveNewProgram(ICollection<TeleprogramModel> models)
+        {
+            FileManager.DeleteFile();
+            using (StreamWriter writer = new StreamWriter(@"C:\Temp\TeleprogramsDb.txt"))
+            {
+                string data = "";
+                foreach (var teleprogramModel in models)
+                {
+                    data += teleprogramModel.ToString();
+                }
+                writer.WriteLine(data);
+            }
         }
 
         public static void AddFakeDb()
         {
             using (StreamWriter writer = new StreamWriter(@"C:\Temp\TeleprogramsDb.txt"))
             {
-                TeleprogramModel model0 = new TeleprogramModel { Name = "GoT", Genre = "Film", Date = "13/5/2019" };
-                TeleprogramModel model1 = new TeleprogramModel { Name = "Dota", Genre = "Stream", Date = "14/5/2019" };
-                TeleprogramModel model2 = new TeleprogramModel { Name = "Avengers", Genre = "Film", Date = "15/5/2019" };
-                writer.Write(model0.ToString() + model1.ToString() + model2.ToString());
+                TeleprogramModel model0 = new TeleprogramModel { Name = "GoT", Genre = "Film", Date = "13/5/2019", isSaved = false};
+                TeleprogramModel model1 = new TeleprogramModel { Name = "Dota", Genre = "Stream", Date = "14/5/2019", isSaved = false};
+                TeleprogramModel model2 = new TeleprogramModel { Name = "Avengers", Genre = "Film", Date = "15/5/2019", isSaved = false};
+                TeleprogramModel model3 = new TeleprogramModel { Name = "Квартал 95", Genre = "Show", Date = "15/6/2019", isSaved = false };
+                writer.Write(model0.ToString() + model1.ToString() + model2.ToString() + model3.ToString());
             }
         }
     }
