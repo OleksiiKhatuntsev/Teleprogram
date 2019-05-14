@@ -109,5 +109,15 @@ namespace Teleprogram
             MainGrid.DataSource = monthPrograms;
             WorkWithText.SaveNewProgram(models);
         }
+
+        private void NameSearch_TextChanged(object sender, EventArgs e)
+        {
+            MainGrid.DataSource = models.Where(x => x.Name.Contains(NameSearch.Text)).ToList();
+        }
+
+        private void GenreSearch_TextChanged(object sender, EventArgs e)
+        {
+            MainGrid.DataSource = models.Where(x => x.Genre.Contains(GenreSearch.Text)).ToList();
+        }
     }
 }

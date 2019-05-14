@@ -33,14 +33,18 @@
             this.ViewAll = new System.Windows.Forms.Button();
             this.Today = new System.Windows.Forms.Button();
             this.Month = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.NameSearch = new System.Windows.Forms.TextBox();
+            this.GenreSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // MainGrid
             // 
-            this.MainGrid.Location = new System.Drawing.Point(-1, 0);
+            this.MainGrid.Location = new System.Drawing.Point(-1, 48);
             this.MainGrid.Name = "MainGrid";
-            this.MainGrid.Size = new System.Drawing.Size(821, 394);
+            this.MainGrid.Size = new System.Drawing.Size(821, 346);
             this.MainGrid.TabIndex = 0;
             this.MainGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MainGrid_CellContentClick);
             // 
@@ -84,12 +88,50 @@
             this.Month.UseVisualStyleBackColor = true;
             this.Month.Click += new System.EventHandler(this.Month_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Search by Name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(454, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Search by Genre:";
+            // 
+            // NameSearch
+            // 
+            this.NameSearch.Location = new System.Drawing.Point(107, 12);
+            this.NameSearch.Name = "NameSearch";
+            this.NameSearch.Size = new System.Drawing.Size(100, 20);
+            this.NameSearch.TabIndex = 7;
+            this.NameSearch.TextChanged += new System.EventHandler(this.NameSearch_TextChanged);
+            // 
+            // GenreSearch
+            // 
+            this.GenreSearch.Location = new System.Drawing.Point(550, 12);
+            this.GenreSearch.Name = "GenreSearch";
+            this.GenreSearch.Size = new System.Drawing.Size(100, 20);
+            this.GenreSearch.TabIndex = 8;
+            this.GenreSearch.TextChanged += new System.EventHandler(this.GenreSearch_TextChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(821, 458);
+            this.Controls.Add(this.GenreSearch);
+            this.Controls.Add(this.NameSearch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Month);
             this.Controls.Add(this.Today);
             this.Controls.Add(this.ViewAll);
@@ -100,6 +142,7 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,6 +153,10 @@
         private System.Windows.Forms.Button ViewAll;
         private System.Windows.Forms.Button Today;
         private System.Windows.Forms.Button Month;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox NameSearch;
+        private System.Windows.Forms.TextBox GenreSearch;
     }
 }
 
