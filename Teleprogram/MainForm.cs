@@ -112,12 +112,17 @@ namespace Teleprogram
 
         private void NameSearch_TextChanged(object sender, EventArgs e)
         {
-            MainGrid.DataSource = models.Where(x => x.Name.Contains(NameSearch.Text)).ToList();
+            MainGrid.DataSource = models.Where(x => x.Name.ToLower().Contains(NameSearch.Text.ToLower())).ToList();
         }
 
         private void GenreSearch_TextChanged(object sender, EventArgs e)
         {
-            MainGrid.DataSource = models.Where(x => x.Genre.Contains(GenreSearch.Text)).ToList();
+            MainGrid.DataSource = models.Where(x => x.Genre.ToLower().Contains(GenreSearch.Text.ToLower())).ToList();
+        }
+
+        private void ChannelSearch_TextChanged(object sender, EventArgs e)
+        {
+            MainGrid.DataSource = models.Where(x => x.Channel.ToLower().Contains(ChannelSearch.Text.ToLower())).ToList();
         }
     }
 }

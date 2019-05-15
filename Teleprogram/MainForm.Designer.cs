@@ -37,6 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.NameSearch = new System.Windows.Forms.TextBox();
             this.GenreSearch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ChannelSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(454, 15);
+            this.label2.Location = new System.Drawing.Point(299, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 6;
@@ -116,11 +118,28 @@
             // 
             // GenreSearch
             // 
-            this.GenreSearch.Location = new System.Drawing.Point(550, 12);
+            this.GenreSearch.Location = new System.Drawing.Point(395, 12);
             this.GenreSearch.Name = "GenreSearch";
             this.GenreSearch.Size = new System.Drawing.Size(100, 20);
             this.GenreSearch.TabIndex = 8;
             this.GenreSearch.TextChanged += new System.EventHandler(this.GenreSearch_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(563, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Search by Channel:";
+            // 
+            // ChannelSearch
+            // 
+            this.ChannelSearch.Location = new System.Drawing.Point(669, 12);
+            this.ChannelSearch.Name = "ChannelSearch";
+            this.ChannelSearch.Size = new System.Drawing.Size(100, 20);
+            this.ChannelSearch.TabIndex = 10;
+            this.ChannelSearch.TextChanged += new System.EventHandler(this.ChannelSearch_TextChanged);
             // 
             // MainForm
             // 
@@ -128,6 +147,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(821, 458);
+            this.Controls.Add(this.ChannelSearch);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.GenreSearch);
             this.Controls.Add(this.NameSearch);
             this.Controls.Add(this.label2);
@@ -157,6 +178,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox NameSearch;
         private System.Windows.Forms.TextBox GenreSearch;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox ChannelSearch;
     }
 }
 

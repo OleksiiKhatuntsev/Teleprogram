@@ -13,11 +13,13 @@ namespace Teleprogram
 
         public string Date { get; set; }
 
+        public string Channel { get; set; }
+
         public bool isSaved { get; set; }
 
         public override string ToString()
         {
-            return $"{this.Name}.{this.Genre}.{this.Date}.{this.isSaved}*";
+            return $"{this.Name}.{this.Genre}.{this.Date}.{this.Channel}.{this.isSaved}*";
         }
     }
 }

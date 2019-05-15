@@ -43,7 +43,11 @@ namespace Teleprogram
                 {
                     teleprogram.Date += text;
                 }
-                else if(counter == 3)
+                else if (counter == 3)
+                {
+                    teleprogram.Channel += text;
+                }
+                else if(counter == 4)
                 {
                     if (text == 'T')
                         teleprogram.isSaved = true;
@@ -73,10 +77,10 @@ namespace Teleprogram
         {
             using (StreamWriter writer = new StreamWriter(@"C:\Temp\TeleprogramsDb.txt"))
             {
-                TeleprogramModel model0 = new TeleprogramModel { Name = "GoT", Genre = "Film", Date = "13/5/2019", isSaved = false};
-                TeleprogramModel model1 = new TeleprogramModel { Name = "Dota", Genre = "Stream", Date = "14/5/2019", isSaved = false};
-                TeleprogramModel model2 = new TeleprogramModel { Name = "Avengers", Genre = "Film", Date = "15/5/2019", isSaved = false};
-                TeleprogramModel model3 = new TeleprogramModel { Name = "Квартал 95", Genre = "Show", Date = "15/6/2019", isSaved = false };
+                TeleprogramModel model0 = new TeleprogramModel { Name = "GoT", Genre = "Film", Date = "13/5/2019", Channel = "Inter", isSaved = false};
+                TeleprogramModel model1 = new TeleprogramModel { Name = "Dota", Genre = "Stream", Date = "14/5/2019", Channel = "First Channel", isSaved = false};
+                TeleprogramModel model2 = new TeleprogramModel { Name = "Avengers", Genre = "Film", Date = "15/5/2019", Channel = "Fifth Channel", isSaved = false};
+                TeleprogramModel model3 = new TeleprogramModel { Name = "Квартал 95", Genre = "Show", Date = "15/6/2019", Channel = "YouTube", isSaved = false };
                 writer.Write(model0.ToString() + model1.ToString() + model2.ToString() + model3.ToString());
             }
         }
