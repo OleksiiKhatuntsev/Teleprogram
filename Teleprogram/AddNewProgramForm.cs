@@ -48,7 +48,9 @@ namespace Teleprogram
         private void EnableButton()
         {
             if (Channel.Text == string.Empty || ProgramName.Text == string.Empty || Genre.Text == string.Empty)
-            { }
+            {
+                AddNewProgram.Enabled = true;
+            }
             else
             {
                 AddNewProgram.Enabled = true;
