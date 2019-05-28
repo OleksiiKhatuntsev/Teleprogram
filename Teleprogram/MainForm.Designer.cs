@@ -39,6 +39,9 @@
             this.GenreSearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ChannelSearch = new System.Windows.Forms.TextBox();
+            this.SaveFavourites = new System.Windows.Forms.Button();
+            this.AddNewProgram = new System.Windows.Forms.Button();
+            this.DeletePrograms = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,12 +144,45 @@
             this.ChannelSearch.TabIndex = 10;
             this.ChannelSearch.TextChanged += new System.EventHandler(this.ChannelSearch_TextChanged);
             // 
+            // SaveFavourites
+            // 
+            this.SaveFavourites.Location = new System.Drawing.Point(15, 459);
+            this.SaveFavourites.Name = "SaveFavourites";
+            this.SaveFavourites.Size = new System.Drawing.Size(393, 23);
+            this.SaveFavourites.TabIndex = 11;
+            this.SaveFavourites.Text = "Save favourites";
+            this.SaveFavourites.UseVisualStyleBackColor = true;
+            this.SaveFavourites.Click += new System.EventHandler(this.SaveFavourites_Click);
+            // 
+            // AddNewProgram
+            // 
+            this.AddNewProgram.Location = new System.Drawing.Point(415, 459);
+            this.AddNewProgram.Name = "AddNewProgram";
+            this.AddNewProgram.Size = new System.Drawing.Size(394, 23);
+            this.AddNewProgram.TabIndex = 12;
+            this.AddNewProgram.Text = "Add new program";
+            this.AddNewProgram.UseVisualStyleBackColor = true;
+            this.AddNewProgram.Click += new System.EventHandler(this.AddNewProgram_Click);
+            // 
+            // DeletePrograms
+            // 
+            this.DeletePrograms.Location = new System.Drawing.Point(15, 489);
+            this.DeletePrograms.Name = "DeletePrograms";
+            this.DeletePrograms.Size = new System.Drawing.Size(794, 23);
+            this.DeletePrograms.TabIndex = 13;
+            this.DeletePrograms.Text = "Delete Expired Programs";
+            this.DeletePrograms.UseVisualStyleBackColor = true;
+            this.DeletePrograms.Click += new System.EventHandler(this.DeletePrograms_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(821, 458);
+            this.ClientSize = new System.Drawing.Size(821, 519);
+            this.Controls.Add(this.DeletePrograms);
+            this.Controls.Add(this.AddNewProgram);
+            this.Controls.Add(this.SaveFavourites);
             this.Controls.Add(this.ChannelSearch);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.GenreSearch);
@@ -180,6 +216,9 @@
         private System.Windows.Forms.TextBox GenreSearch;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox ChannelSearch;
+        private System.Windows.Forms.Button SaveFavourites;
+        private System.Windows.Forms.Button AddNewProgram;
+        private System.Windows.Forms.Button DeletePrograms;
     }
 }
 

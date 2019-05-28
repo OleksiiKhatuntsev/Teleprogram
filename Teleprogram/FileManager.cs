@@ -8,6 +8,12 @@ namespace Teleprogram
 {
     public class FileManager
     {
+        private string filePath;
+
+        public FileManager(string filePath)
+        {
+            this.filePath = filePath;
+        }
         public void CreateDirectory()
         {
             string directoryPath = @"C:\Temp";
@@ -19,15 +25,15 @@ namespace Teleprogram
 
         public void CreateFile()
         {
-            if(File.Exists(@"C:\Temp\TeleprogramsDb.txt"))
+            if(File.Exists(filePath))
             { return;}
-            var stream = File.Create(@"C:\Temp\TeleprogramsDb.txt");
+            var stream = File.Create(filePath);
             stream.Close();
         }
 
-        public static void DeleteFile()
+        public static void DeleteFile(string path)
         {
-            File.Delete(@"C:\Temp\TeleprogramsDb.txt");
+            File.Delete(path);
         }
     }
 }
