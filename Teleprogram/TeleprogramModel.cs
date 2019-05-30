@@ -19,7 +19,7 @@ namespace Teleprogram
 
         public override string ToString()
         {
-            return $"{this.Name}.{this.Genre}.{this.Date}.{this.Channel}.{this.isSaved}*";
+            return $"{this.Name}&{this.Genre}&{this.Date}&{this.Channel}&{this.isSaved}*";
         }
     }
 }

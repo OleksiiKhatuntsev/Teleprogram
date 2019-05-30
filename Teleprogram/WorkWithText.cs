@@ -30,7 +30,7 @@ namespace Teleprogram
                     counter = 0;
                     teleprogram = new TeleprogramModel();
                 }
-                else if (text == '.')
+                else if (text == '&')
                 {
                     counter++;
                 }
