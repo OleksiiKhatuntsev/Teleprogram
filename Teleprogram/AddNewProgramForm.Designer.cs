@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Date = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,14 +36,8 @@
             this.Genre = new System.Windows.Forms.TextBox();
             this.Channel = new System.Windows.Forms.TextBox();
             this.AddNewProgram = new System.Windows.Forms.Button();
+            this.DateText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // Date
-            // 
-            this.Date.Location = new System.Drawing.Point(73, 86);
-            this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(200, 20);
-            this.Date.TabIndex = 0;
             // 
             // label1
             // 
@@ -116,11 +109,20 @@
             this.AddNewProgram.UseVisualStyleBackColor = true;
             this.AddNewProgram.Click += new System.EventHandler(this.AddNewProgram_Click);
             // 
+            // DateText
+            // 
+            this.DateText.Location = new System.Drawing.Point(73, 86);
+            this.DateText.Name = "DateText";
+            this.DateText.Size = new System.Drawing.Size(200, 20);
+            this.DateText.TabIndex = 9;
+            this.DateText.TextChanged += new System.EventHandler(this.DateText_TextChanged);
+            // 
             // AddNewProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(293, 140);
+            this.Controls.Add(this.DateText);
             this.Controls.Add(this.AddNewProgram);
             this.Controls.Add(this.Channel);
             this.Controls.Add(this.Genre);
@@ -129,7 +131,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Date);
             this.Name = "AddNewProgramForm";
             this.Text = "AddNewProgramForm";
             this.ResumeLayout(false);
@@ -138,8 +139,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker Date;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -148,5 +147,6 @@
         private System.Windows.Forms.TextBox Genre;
         private System.Windows.Forms.TextBox Channel;
         private System.Windows.Forms.Button AddNewProgram;
+        private System.Windows.Forms.TextBox DateText;
     }
 }

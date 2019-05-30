@@ -27,7 +27,7 @@ namespace Teleprogram
 
         private TeleprogramModel ReadFromForm()
         {
-            return new TeleprogramModel{ Channel = this.Channel.Text, Genre = this.Genre.Text, Date = WorkWithText.ConvertDateToString(this.Date.Value), Name = this.ProgramName.Text, isSaved = false};
+            return new TeleprogramModel{ Channel = this.Channel.Text, Genre = this.Genre.Text, Date = this.DateText.Text, Name = this.ProgramName.Text, isSaved = false};
         }
 
         private void ProgramName_TextChanged(object sender, EventArgs e)
@@ -55,6 +55,11 @@ namespace Teleprogram
             {
                 AddNewProgram.Enabled = true;
             }
+        }
+
+        private void DateText_TextChanged(object sender, EventArgs e)
+        {
+            EnableButton();
         }
     }
 }
